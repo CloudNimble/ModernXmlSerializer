@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>netcoreapp3.0;net472</TargetFrameworks>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ben.TypeDictionary" Version="0.1.4" />
+    <PackageReference Include="BenchmarkDotNet" Version="0.11.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ModernXmlSerializer.Resources.Shared\ModernXmlSerializer.Resources.csproj" />
+    <ProjectReference Include="..\ModernXmlSerializer\ModernXmlSerializer.csproj" />
+  </ItemGroup>
+
+</Project>
