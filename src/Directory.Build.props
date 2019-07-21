@@ -4,7 +4,7 @@
   <!-- Folder layout -->
   <PropertyGroup>
     <IsBenchmarkProject Condition="$(MSBuildProjectName.ToLower().EndsWith('.performance'))">true</IsBenchmarkProject>
-    <IsTestProject Condition="$(MSBuildProjectName.ToLower().Contains('.tests.'))">true</IsTestProject>
+    <IsTestProject Condition="$(MSBuildProjectName.ToLower().Contains('.tests'))">true</IsTestProject>
     <IsTestAssetProject Condition="$(RepoRelativeProjectDir.Contains('testassets'))">true</IsTestAssetProject>
     <IsSampleProject Condition="$(MSBuildProjectName.ToLower().Contains('.samples.'))">true</IsSampleProject>
 
@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Product>SimpleMessageBus</Product>
+    <Product>ModernXmlSerializer</Product>
 
     <Authors>CloudNimble</Authors>
     <Company>CloudNimble, Inc.</Company>
@@ -36,13 +36,13 @@
     <MaintainerEmail>opensource@nimbleapps.cloud</MaintainerEmail>
 
     <PackageIconUrl>https://go.microsoft.com/fwlink/?LinkID=288859</PackageIconUrl>
-    <PackageProjectUrl>https://restier.readthedocs.io/en/latest/</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/CloudNimble/ModernXmlSerializer</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageTags>messagebus;webjobs;azure;eventbus</PackageTags>
+    <PackageTags>xmlserializer,datacontractserializer</PackageTags>
     <Serviceable>true</Serviceable>
 
     <RepositoryRoot>$(MSBuildThisFileDirectory)</RepositoryRoot>
-    <RepositoryUrl>https://github.com/CloudNimble/SimpleMessageBus</RepositoryUrl>
+    <RepositoryUrl>https://github.com/CloudNimble/ModernXmlSerializer</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
