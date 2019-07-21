@@ -3,13 +3,14 @@
 
   <!-- Folder layout -->
   <PropertyGroup>
-    <IsBenchmarkProject Condition="$(MSBuildProjectName.ToLower().EndsWith('.performance'))">true</IsBenchmarkProject>
+    <IsBenchmarkProject Condition="$(MSBuildProjectName.ToLower().EndsWith('.benchmarks'))">true</IsBenchmarkProject>
     <IsTestProject Condition="$(MSBuildProjectName.ToLower().Contains('.tests'))">true</IsTestProject>
-    <IsTestAssetProject Condition="$(RepoRelativeProjectDir.Contains('testassets'))">true</IsTestAssetProject>
+    <IsTestAssetProject Condition="$(RepoRelativeProjectDir.Contains('.resources'))">true</IsTestAssetProject>
     <IsSampleProject Condition="$(MSBuildProjectName.ToLower().Contains('.samples.'))">true</IsSampleProject>
 
     <IncludeSource>false</IncludeSource>
     <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
 
   </PropertyGroup>
 
@@ -19,7 +20,7 @@
     <Authors>CloudNimble</Authors>
     <Company>CloudNimble, Inc.</Company>
     <RpmPackageVendor>CloudNimble</RpmPackageVendor>
-    <Copyright>© CloudNimble, Inc. All rights reserved.</Copyright>
+    <Copyright>Copyright © 2019 CloudNimble, Inc. All rights reserved.</Copyright>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageLicenseUrl>https://raw.githubusercontent.com/OData/RESTier/master/License.txt</PackageLicenseUrl>
     <!-- The SPDX name for the source license. See https://spdx.org/licenses/. -->

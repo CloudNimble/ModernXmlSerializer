@@ -5,15 +5,21 @@ VisualStudioVersion = 16.0.29111.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModernXmlSerializer", "ModernXmlSerializer\ModernXmlSerializer.csproj", "{A45A1C83-95CA-4041-A085-BA7746D5239D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernXmlSerializer.Tests", "ModernXmlSerializer.Tests\ModernXmlSerializer.Tests.csproj", "{080AD9F3-C96A-4EDE-89D1-8B23123B25C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModernXmlSerializer.Tests", "ModernXmlSerializer.Tests\ModernXmlSerializer.Tests.csproj", "{080AD9F3-C96A-4EDE-89D1-8B23123B25C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernXmlSerializer.Benchmarks", "ModernXmlSerializer.Benchmarks\ModernXmlSerializer.Benchmarks.csproj", "{2119B77F-F044-492C-9B75-EDD9C9EA727C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModernXmlSerializer.Benchmarks", "ModernXmlSerializer.Benchmarks\ModernXmlSerializer.Benchmarks.csproj", "{2119B77F-F044-492C-9B75-EDD9C9EA727C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernXmlSerializer.Resources", "ModernXmlSerializer.Resources.Shared\ModernXmlSerializer.Resources.csproj", "{AC24075F-7652-463B-993E-FE8B523B5FEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModernXmlSerializer.Resources", "ModernXmlSerializer.Resources.Shared\ModernXmlSerializer.Resources.csproj", "{AC24075F-7652-463B-993E-FE8B523B5FEF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{F2826C74-9ED7-4253-80AA-0EAB66C22CBE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F14F6B85-46DA-4788-B7A2-1DBE453F4F8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{86C70F29-7E37-42DA-8CD1-3613E3859612}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		global.json = global.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
