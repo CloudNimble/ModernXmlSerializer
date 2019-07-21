@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ModernXmlSerializer.Resources.RevChip;
 using System;
 
-namespace ModernXmlClient.Tests
+namespace ModernXmlSerializer.Tests
 {
 
     /// <summary>
