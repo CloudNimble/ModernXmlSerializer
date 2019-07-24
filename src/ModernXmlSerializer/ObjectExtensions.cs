@@ -1,5 +1,6 @@
 ﻿using Ben.Collections;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -69,8 +70,12 @@ namespace System
                 var doc = XDocument.Load(memoryStream);
                 foreach (var element in doc.Root.Elements())
                 {
-                    var propertyInfo = properties.First(c => c.Attribute.ElementName == element.Name.LocalName || c.Property.Name == element.Name.LocalName);
-                    if (propertyInfo == null) continue;
+                    var propertyInfo = properties.FirstOrDefault(c => c.Attribute.ElementName == element.Name.LocalName || c.Property.Name == element.Name.LocalName);
+                    if (propertyInfo == null)
+                    {
+                        Debug.WriteLine($"ModernXmlSerializer: Could not find expected ElementName or PropertyName '{element.Name.LocalName}'");
+                        continue;
+                    }
                     propertyInfo.Property.SetValue(result, TypeDescriptor.GetConverter(propertyInfo.Property.PropertyType).ConvertFromInvariantString(element.Value));
                 }
             }
