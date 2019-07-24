@@ -70,6 +70,8 @@ namespace System
                 var doc = XDocument.Load(memoryStream);
                 foreach (var element in doc.Root.Elements())
                 {
+                    if (string.IsNullOrWhiteSpace(element.Value)) continue;
+
                     var propertyInfo = properties.FirstOrDefault(c => c.Attribute.ElementName == element.Name.LocalName || c.Property.Name == element.Name.LocalName);
                     if (propertyInfo == null)
                     {
