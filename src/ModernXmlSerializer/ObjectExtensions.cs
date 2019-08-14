@@ -58,7 +58,17 @@ namespace System
                     .Select(c => new PropertyDetails { Property = c, Attribute = c.GetCustomAttribute(typeof(XmlElementAttribute)) as XmlElementAttribute })
                     .OrderBy(c => c.Attribute.Order);
 
-                propertyDetails[objectType] = properties;
+                try
+                {
+                    propertyDetails[objectType] = properties;
+                }
+#pragma warning disable CA1031 // Do not catch general exception types
+                catch (Exception ex)
+#pragma warning restore CA1031 // Do not catch general exception types
+                {
+                    Debug.WriteLine($"Exception: {ex.Message}");
+                }
+
             }
             else
             {
@@ -72,7 +82,7 @@ namespace System
                 {
                     if (string.IsNullOrWhiteSpace(element.Value)) continue;
 
-                    var propertyInfo = properties.FirstOrDefault(c => c.Attribute.ElementName == element.Name.LocalName || c.Property.Name == element.Name.LocalName);
+                     var propertyInfo = properties.FirstOrDefault(c => c.Attribute.ElementName == element.Name.LocalName || c.Property.Name == element.Name.LocalName);
                     if (propertyInfo == null)
                     {
                         Debug.WriteLine($"ModernXmlSerializer: Could not find expected ElementName or PropertyName '{element.Name.LocalName}'");
@@ -106,7 +116,16 @@ namespace System
                     .Select(c => new PropertyDetails { Property = c, Attribute = c.GetCustomAttribute(typeof(XmlElementAttribute)) as XmlElementAttribute })
                     .OrderBy(c => c.Attribute.Order);
 
-                propertyDetails[objectType] = properties;
+                try
+                {
+                    propertyDetails[objectType] = properties;
+                }
+#pragma warning disable CA1031 // Do not catch general exception types
+                catch (Exception ex)
+#pragma warning restore CA1031 // Do not catch general exception types
+                {
+                    Debug.WriteLine($"Exception: {ex.Message}");
+                }
             }
             else
             {
@@ -116,7 +135,16 @@ namespace System
             if (!typeNames.ContainsKey(objectType))
             {
                 objectName = objectType.GetCustomAttribute(typeof(XmlRootAttribute)) is XmlRootAttribute rootNodeAttribute ? rootNodeAttribute.ElementName : objectType.Name;
-                typeNames[objectType] = objectName;
+                try
+                {
+                    typeNames[objectType] = objectName;
+                }
+#pragma warning disable CA1031 // Do not catch general exception types
+                catch (Exception ex)
+#pragma warning restore CA1031 // Do not catch general exception types
+                {
+                    Debug.WriteLine($"Exception: {ex.Message}");
+                }
             }
             else
             {
